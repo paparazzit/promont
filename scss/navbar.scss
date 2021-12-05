@@ -1,0 +1,21 @@
+nav {
+	font-family: $fnt_headline;
+	// border: 1px solid red;
+	padding: 1rem 11%;
+
+	@include flex(center, space-between, nowrap, row);
+
+	.drop_down {
+		// border: 1px solid red;
+		ul {
+			@include flex(center, center, nowrap, row);
+			li {
+				margin: 0 20px;
+				a {
+					letter-spacing: 1.5px;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+}

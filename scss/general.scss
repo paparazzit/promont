@@ -1,0 +1,131 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: $fnt_size;
+	font-family: $fnt_text;
+}
+a {
+	text-decoration: none;
+	color: $clr_fnt_dark;
+	font-size: 1rem;
+	cursor: pointer;
+}
+ul {
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $fnt_headline;
+	color: $clr_fnt_dark;
+	text-transform: uppercase;
+	font-weight: 200;
+}
+
+#default {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	min-width: 320px;
+	z-index: -1;
+	// border: 3px solid red;
+	.def_container {
+		// border: 1px solid green;
+		height: 100%;
+		width: 1500px;
+		@media (max-width: 1500px) {
+			width: calc(1500px * 0.8);
+		}
+		@media (max-width: 1200px) {
+			width: calc(1200px * 0.8);
+		}
+		@media (max-width: 960px) {
+			width: calc(960px * 0.8);
+		}
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+	}
+}
+
+.container {
+	width: 1500px;
+	min-width: 320px;
+	margin: 0 auto;
+	@media (max-width: 1500px) {
+		width: calc(1500px * 0.8);
+	}
+	@media (max-width: 1200px) {
+		width: calc(1200px * 0.8);
+	}
+	@media (max-width: 960px) {
+		width: calc(960px * 0.8);
+	}
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.border_right {
+	border-right: 2px dashed $clr_accents;
+}
+.border_top {
+	border-top: 2px dashed $clr_accents;
+}
+.border_left {
+	border-left: 2px dashed $clr_accents;
+}
+.border_bottom {
+	border-bottom: 2px dashed $clr_accents;
+}
+.br_r_t_r {
+	border-top-right-radius: 30px;
+}
+.br_r_t_l {
+	border-top-left-radius: 30px;
+}
+.br_r_b_l {
+	border-bottom-left-radius: 30px;
+}
+.br_r_b_r {
+	border-bottom-right-radius: 30px;
+}
+
+.flex {
+	display: flex;
+
+	justify-content: center;
+}
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.text_left {
+	text-align: left;
+}
+.text_right {
+	text-align: right;
+}
+#_2021 {
+	border: 1px dashed $white;
+	width: 290px;
+	height: 290px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	h3 {
+		line-height: normal;
+		margin-top: -15px;
+	}
+}
