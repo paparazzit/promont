@@ -19,3 +19,115 @@ nav {
 		}
 	}
 }
+
+// FOOTER
+footer {
+	background-color: $dark_clr;
+	padding: 100px 0;
+	color: $white;
+	.container {
+		@include flex(stretch, space-between, wrap, row);
+
+		article {
+			flex: 0 0 25%;
+			width: 25%;
+			border-right: 1px solid $white;
+			padding: 30px 0;
+			font-family: $fnt_headline;
+			font-weight: 400;
+
+			.logo {
+				display: block;
+
+				width: 65%;
+				img {
+					display: block;
+					width: 100%;
+					min-width: 150px;
+				}
+			}
+
+			.socials {
+				margin-top: 1.2rem;
+				width: 45%;
+				min-width: 135px;
+
+				@include flex(center, space-between, wrap, row);
+				a {
+					z-index: 10;
+					cursor: pointer;
+
+					&:hover {
+						svg {
+							path {
+								fill: $white;
+								transition: 0.3s all ease;
+							}
+						}
+					}
+				}
+			}
+
+			ul {
+				li {
+					margin-bottom: 0.4rem;
+					a {
+						color: $white;
+						letter-spacing: 1.2px;
+						&:hover {
+							color: $clr_accents;
+						}
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			address {
+				font-style: normal;
+				min-width: 175px;
+				p {
+					letter-spacing: 1px;
+				}
+				margin-bottom: 1rem;
+			}
+			.contact {
+				min-width: 175px;
+				a {
+					color: $white;
+					display: block;
+					cursor: pointer;
+					&:hover {
+						color: $clr_accents;
+					}
+				}
+			}
+			@include flex(center, center, nowrap, row);
+
+			&:first-child {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			&:nth-child(2) {
+				flex-direction: column;
+			}
+			&:last-child {
+				border-right: none;
+				@include flex(center, center, nowrap, row);
+				.copyRight {
+					flex: 0 0 240px;
+					width: 240px;
+
+					letter-spacing: 1.3px;
+					p:first-child {
+						margin-bottom: 1.2rem;
+						span {
+							color: $clr_accents;
+						}
+					}
+				}
+			}
+		}
+	}
+}

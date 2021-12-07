@@ -304,7 +304,7 @@ header {
       font-family: "Playfair Display", serif; }
     header .accentBox .aps {
       position: absolute;
-      font-size: 7.6rem;
+      font-size: 120px;
       top: -115px;
       right: 135px; }
   header ._950 {
@@ -329,7 +329,9 @@ header {
           font-size: 1.3rem; }
   header .doted_line {
     position: absolute;
-    top: 42%;
+    left: 302px;
+    top: 45%;
+    width: 20vw;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -343,87 +345,16 @@ header {
       height: 2px;
       background: #ea2a00;
       margin: 0 3px; }
-  @media (max-width: 1538px) {
-    header hgroup h1 {
-      font-size: 8.4rem; }
-    header hgroup .medalje {
-      left: -85px; }
-      header hgroup .medalje .aps_wrapper img {
-        width: 170px; }
-      header hgroup .medalje .aps_wrapper .aps_content {
-        margin-top: -30px;
-        margin-left: -40px; }
-        header hgroup .medalje .aps_wrapper .aps_content h2 {
-          font-size: 4rem; }
-        header hgroup .medalje .aps_wrapper .aps_content img {
-          width: 110px; }
-        header hgroup .medalje .aps_wrapper .aps_content .content_text p:nth-child(1) {
-          font-size: 1.3rem; }
-    header ._950 {
-      top: 47%; }
-      header ._950 .aps_wrapper h2 {
-        font-size: 11rem;
-        top: -13rem; }
-      header ._950 .aps_wrapper .aps_content p {
-        font-size: 1rem; } }
-  header .accentBox {
-    padding: 30px 50px; }
-    header .accentBox .aps {
-      font-size: 6rem;
-      top: -90px; }
-    header .accentBox h2:nth-child(2) {
-      font-size: 1.5rem; }
-    header .accentBox p {
-      font-size: 1rem; }
-  @media (max-width: 1155px) {
-    header hgroup {
-      margin-top: -15%; }
-      header hgroup h1 {
-        font-size: 8rem; }
-      header hgroup .medalje {
-        left: -89px;
-        top: 100%; }
-    header .doted_line {
-      top: 33%; }
-    header ._950 {
-      top: 37%; }
-    header .accentBox {
-      margin-top: 25%; } }
-  @media (max-width: 950px) {
-    header {
-      min-height: 696px; }
-      header hgroup {
-        margin-top: -25%; }
-        header hgroup h1 {
-          font-size: 6.5rem; }
-        header hgroup .medalje {
-          left: -95px;
-          top: 100%; }
-      header .doted_line {
-        top: 28%; }
-      header ._950 {
-        top: 30%; }
-        header ._950 .aps_wrapper h2 {
-          top: -10.4rem;
-          font-size: 9rem;
-          left: -2.9rem; }
-        header ._950 .aps_wrapper .aps_content {
-          width: 220px; }
-      header .accentBox {
-        margin-top: 35%; } }
 
 .timeline {
   background: linear-gradient(rgba(33, 38, 41, 0.6), rgba(33, 38, 41, 0.6)), url(/assets/timeLine/timeLIneBg.jpg);
   background-position: center;
   background-size: cover;
-  height: 100vh;
-  min-height: 775px; }
+  height: 100vh; }
   .timeline .tl_wrapper {
     position: relative;
     border: 1px solid red;
     height: 100%; }
-    .timeline .tl_wrapper #line1 {
-      position: absolute; }
     .timeline .tl_wrapper .tlHead {
       position: absolute;
       width: 55%;
@@ -442,23 +373,9 @@ header {
         display: block;
         width: 100%; }
     .timeline .tl_wrapper .container {
+      position: relative;
       height: 100%;
-      border: 1px solid red;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .timeline .tl_wrapper .container .left_side {
-        border: 1px solid green;
-        flex: 0 0 50%;
-        height: 100%;
-        width: 50%;
-        position: relative; }
-      .timeline .tl_wrapper .container .right_side {
-        flex: 0 0 50%;
-        width: 50%;
-        border: 1px solid blue;
-        height: 100%;
-        position: relative; }
+      border: 1px solid red; }
       .timeline .tl_wrapper .container .tlYear {
         position: absolute; }
         .timeline .tl_wrapper .container .tlYear h3,
@@ -467,15 +384,12 @@ header {
           color: #fff;
           line-height: 1;
           z-index: 2;
-          letter-spacing: 2px; }
+          letter-spacing: 1.6px; }
         .timeline .tl_wrapper .container .tlYear h3 {
           line-height: 0.8;
           letter-spacing: -6px; }
         .timeline .tl_wrapper .container .tlYear span {
           z-index: 1; }
-        .timeline .tl_wrapper .container .tlYear#_2012 {
-          bottom: 30%;
-          transform: translateY(-50%); }
       .timeline .tl_wrapper .container .lines {
         position: absolute; }
 
@@ -484,4 +398,4 @@ header {
   padding: 20px;
   margin: 100px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=css.style.css.map */
