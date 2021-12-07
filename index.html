@@ -15,7 +15,7 @@
 		</div>
 		<!-- NAVIGACIJA -->
 		<nav>
-			<a href="#"><img src="assets/main/logo.svg" alt="" /></a>
+			<a href="#" class="logo"><img src="assets/main/logo.svg" alt="" /></a>
 			<div class="drop_down">
 				<ul>
 					<li><a href="#">Divizije</a></li>
@@ -24,6 +24,11 @@
 					<li><a href="#">O nama</a></li>
 					<li><a href="#">Kontakt</a></li>
 				</ul>
+			</div>
+			<div class="burger">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
 		</nav>
 
@@ -35,7 +40,7 @@
 					<img src="assets/main/Strelica.png" alt="" />
 					<div class="aps_content">
 						<p>MESTA</p>
-						<p>smeštajni kapaciteti u hotelima</p>
+						<p>(smeštajni kapaciteti u hotelima)</p>
 					</div>
 				</div>
 			</div>
@@ -52,9 +57,17 @@
 			<hgroup id="header_hgr">
 				<div class="medalje">
 					<div class="aps_wrapper">
-						<img src="assets/main/ugao na medalje.png" alt="" />
+						<img class="ugao" src="assets/main/ugao na medalje.png" alt="" />
+
 						<div class="aps_content">
-							<h2>100<img src="assets/main/circle.png" alt="" /></h2>
+							<h2>
+								100<img class="full" src="assets/main/circle.png" alt="" /><img
+									class="semiCircle"
+									src="assets/main/semiCircle.png"
+									alt=""
+									class="semiCIrcle"
+								/>
+							</h2>
 
 							<div class="content_text">
 								<p>
@@ -80,6 +93,7 @@
 				<h2>Kilometara</h2>
 				<p>(izgrađene mreže gasovoda)</p>
 			</div>
+			<div class="accentCircle"></div>
 		</header>
 
 		<!-- TIMELINE -->
@@ -201,7 +215,35 @@
 			</div>
 		</section>
 
-		<section class="box"></section>
+		<!-- DIVIZIJE -->
+
+		<section class="divizije" id="divizije">
+			<div class="container">
+				<hgroup class="div_hg">
+					<div class="divi_content">
+						<div id="line_cont1"></div>
+						<p>
+							U našem poslu, bilo da su u pitanju turizam, ugostiteljstvo,
+							energetika ili proizvodnja vrhunskih alkoholnih pića, okrenuti smo
+							najkvalitetnijim lokalnim resursima i istovremeno, najvišim
+							međunarodnim standardima poslovanja. <span id="ref1"></span>
+						</p>
+						<div id="line_cont2"></div>
+					</div>
+					<h2><span id="ref2">D</span>ivizij<span id="ref3">e</span></h2>
+
+					<div class="divi_content">
+						<p>
+							<span id="ref4">U</span>z sve to, ono što nas vodi su ogromna
+							želja za istraživanjem i potreba za usavršavanjem u svemu što
+							radimo. Jer, kao što je davno rečeno "ono što vodi i vuče svet,
+							nisu lokomotive, nego ideje"
+						</p>
+						<p class="cite">PROMONT GROUP</p>
+					</div>
+				</hgroup>
+			</div>
+		</section>
 
 		<!-- FOOTER -->
 

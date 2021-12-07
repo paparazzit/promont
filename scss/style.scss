@@ -14,6 +14,7 @@ header {
 	background-position: center;
 	background-size: cover;
 	@include flex(center, center, nowrap, row);
+	overflow-x: hidden;
 	hgroup {
 		position: relative;
 		// border: 1px solid red;
@@ -55,7 +56,15 @@ header {
 					font-size: 4.5rem;
 					position: relative;
 					// border: 1px solid red;
-					img {
+					img.full {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						width: 135px;
+					}
+					img.semiCircle {
+						display: none;
 						position: absolute;
 						left: 50%;
 						top: 50%;
@@ -98,6 +107,9 @@ header {
 			top: -115px;
 			right: 135px;
 		}
+	}
+	.accentCircle {
+		display: none;
 	}
 	._950 {
 		// border: 1px solid red;
@@ -262,6 +274,160 @@ header {
 			margin-top: 35%;
 		}
 	}
+	@media (max-width: 768px) {
+		height: 1100px;
+		position: relative;
+		._950 {
+			position: absolute;
+			top: 5%;
+			// border: 1px solid red;
+			// border: 1px solid red;
+			left: 30px;
+
+			.aps_wrapper {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				h2 {
+					position: relative;
+					font-size: 7rem;
+					left: unset;
+					top: unset;
+					flex: 0 0 50%;
+					width: 50%;
+					line-height: 1;
+				}
+				img {
+					display: none;
+				}
+				.aps_content {
+					position: static;
+					top: unset;
+					left: unset;
+					flex: 0 0 200px;
+					width: 200px;
+					padding-left: 10px;
+					transform: translateY(0);
+					// border: 1px solid red;
+
+					p:nth-child(1) {
+						font-size: 2rem;
+					}
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						height: 2px;
+						width: 35%;
+						top: 64%;
+						right: 95%;
+						background-color: $clr_accents;
+					}
+				}
+			}
+		}
+
+		hgroup {
+			margin-top: 20%;
+			h1 {
+				font-size: 22vw;
+			}
+			.medalje {
+				left: -20px;
+				transform: translateY(100%);
+				top: unset;
+				bottom: -45%;
+				.aps_wrapper {
+					img.ugao {
+						display: none;
+					}
+					.aps_content {
+						flex-direction: column;
+						h2 {
+							font-size: 4.6rem;
+							line-height: 1.2;
+							img.full {
+								display: none;
+							}
+							img.semiCircle {
+								display: block;
+								width: 140px;
+								height: 140px;
+								top: 50%;
+							}
+						}
+					}
+				}
+			}
+			.strelica {
+				max-height: 400px;
+				top: 52%;
+				left: 50.8%;
+				width: 2px;
+				background-color: $clr_accents;
+				img {
+					display: none;
+				}
+				&::after {
+					content: "";
+					display: block;
+					border-bottom: 2px solid red;
+					border-right: 2px solid red;
+					height: 12px;
+					width: 12px;
+					position: absolute;
+					bottom: 0px;
+					left: -6px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+		.doted_line {
+			display: none;
+		}
+		.accentBox {
+			position: absolute;
+
+			padding: 20px 20px;
+			margin-top: 0;
+			top: 30%;
+			z-index: 10;
+			.aps {
+				left: 15px;
+				top: -100px;
+			}
+			h2:nth-child(2) {
+				font-size: 1.8rem;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+		}
+		.accentCircle {
+			position: absolute;
+			display: block;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			border: 2px dashed $clr_fnt_dark;
+
+			top: 17%;
+			right: -50px;
+			&::after {
+				display: block;
+				content: "";
+				position: absolute;
+				width: 3px;
+				height: 60%;
+				background-color: $clr_accents;
+				left: 50%;
+				transform: translateX(-50%);
+				top: -30%;
+			}
+		}
+	}
 }
 
 // TIMELINE
@@ -356,8 +522,85 @@ header {
 	}
 }
 
-.box {
-	height: 200px;
-	padding: 20px;
-	margin: 100px;
+.divizije {
+	background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(255, 255, 255, 0.274)),
+		url(../assets/divizje/divizije_bg.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	.container {
+		.div_hg {
+			border: 1px solid green;
+			color: $white;
+			position: relative;
+			@include flex(center, space-between, nowrap, row);
+			p {
+				font-family: $fnt_headline;
+				font-weight: 300;
+				letter-spacing: 1.3px;
+			}
+			& > h2 {
+				text-align: center;
+				color: $white;
+				font-size: 12vw;
+				transform: translateY(-20%);
+
+				border: 1px solid blue;
+			}
+			.divi_content {
+				// border: 1px solid red;
+				// position: absolute;
+				// width: 372px;
+				p {
+					max-width: 372px;
+				}
+			}
+			.divi_content:nth-child(1) {
+				border: 1px solid red;
+				transform: translateY(-35%);
+				z-index: 2;
+				#line_cont1,
+				#line_cont2 {
+					position: absolute;
+
+					height: 2px;
+					border-top: 2px dashed $clr_accents;
+					display: block;
+					z-index: 1;
+				}
+				#line_cont1 {
+					width: 400px;
+					top: 10px;
+					right: 100%;
+				}
+				#line_cont2 {
+					bottom: 10px;
+					left: 45%;
+					width: 400px;
+				}
+			}
+			.divi_content:nth-child(3) {
+				right: 0;
+				transform: translateY(30%);
+				border: 1px solid green;
+				.cite {
+					font-size: 1.3rem;
+					text-transform: uppercase;
+					margin-left: 10%;
+					margin-top: 20px;
+					position: relative;
+					&::before {
+						display: block;
+						content: "";
+						position: absolute;
+						top: 50%;
+						left: -10%;
+						height: 2px;
+						width: 8%;
+						background-color: $clr_accents;
+					}
+				}
+			}
+		}
+	}
 }

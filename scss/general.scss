@@ -6,6 +6,8 @@
 body {
 	font-size: $fnt_size;
 	font-family: $fnt_text;
+	overflow-x: hidden;
+	background-color: $body_bg;
 }
 a {
 	text-decoration: none;
@@ -15,6 +17,7 @@ a {
 }
 ul {
 	list-style: none;
+	list-style-position: inside;
 }
 h1,
 h2,
@@ -61,6 +64,7 @@ h6 {
 	width: 1500px;
 	min-width: 320px;
 	margin: 0 auto;
+	// border: 1px solid red;
 	@media (max-width: 1500px) {
 		width: calc(1500px * 0.8);
 	}
@@ -128,4 +132,8 @@ h6 {
 		line-height: normal;
 		margin-top: -15px;
 	}
+}
+
+section {
+	margin-top: 20px;
 }
