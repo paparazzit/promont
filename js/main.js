@@ -1,6 +1,13 @@
 let def = document.querySelector("#default");
 let def_cont = document.querySelector(".def_container");
 let height, width, cont_width;
+let ref1 = document.querySelector("#ref1");
+let ref1Line = document.querySelector("#ref1Line");
+let ref2 = document.querySelector("#ref2");
+let ref3 = document.querySelector("#ref3");
+let ref4 = document.querySelector("#ref4");
+let ref4Line = document.querySelector("#ref4Line");
+
 window.addEventListener("load", start);
 window.addEventListener("resize", start);
 
@@ -23,12 +30,13 @@ function start() {
 		dots.style.left = _950_w.width - 45 + "px";
 	}
 
-	console.log("LEFT", hgr.offsetLeft);
-	console.log("WIDTH", _950_w.width);
-	console.log("SIZE", hgr_pos.left - _950_w.width + "px");
+	// console.log("LEFT", hgr.offsetLeft);
+	// console.log("WIDTH", _950_w.width);
+	// console.log("SIZE", hgr_pos.left - _950_w.width + "px");
 	strelicaDole.style.height = middle - 25 + "px";
 	tlYearPos();
 	tlLinesPos();
+	divisionLines();
 }
 
 function tlYearPos() {
@@ -84,7 +92,7 @@ function tlYearPos() {
 	let _2008 = document.querySelector("#_2008");
 	let pos_2010 = _2010.getBoundingClientRect();
 	let pos_2008 = _2008.getBoundingClientRect();
-	console.log(pos_2008, pos_2010);
+	// console.log(pos_2008, pos_2010);
 	line2.style.width =
 		pos_2004.left - (pos_1993.left + pos_1993.width) + 10 + "px";
 	line2.style.left =
@@ -92,7 +100,7 @@ function tlYearPos() {
 	line_2010.style.height =
 		pos_2010.top - pos_2008.top - pos_2008.height + pos_2010.height / 2 + "px";
 	line_2010.style.top = -(pos_2010.top - pos_2008.top) + pos_2008.height + "px";
-	console.log(def.offsetWidth);
+	// console.log(def.offsetWidth);
 }
 
 function tlLinesPos() {
@@ -108,5 +116,57 @@ function tlLinesPos() {
 		line.style.top = top + "px";
 	});
 	if (def.offsetWidth < 1300) {
+	}
+}
+
+function divisionLines() {
+	let ref1_pos = ref1.getBoundingClientRect();
+	let ref2_pos = ref2.getBoundingClientRect();
+	let ref3_pos = ref3.getBoundingClientRect();
+	let ref4_pos = ref4.getBoundingClientRect();
+	ref1Line.style.width = space_between(ref2_pos.left, ref1_pos.left) + "px";
+	ref4Line.style.width =
+		space_between(ref4_pos.left, ref3_pos.left) -
+		ref3_pos.width +
+		ref3_pos.width / 2 +
+		"px";
+
+	console.log();
+}
+
+function space_between(ref_a, ref_b) {
+	let distance = ref_a - ref_b;
+	return distance;
+}
+
+// VIDEO PLAYER
+
+let video = document.querySelector("#video_content");
+let video_headline = document.querySelector(".video_controls");
+let play_stop = document.querySelector(".control_border");
+let play_stop_icon = document.querySelector("#play_stop");
+
+play_stop.addEventListener("click", playVideo);
+
+video.addEventListener("click", playVideo);
+video.addEventListener("mousemove", showControls);
+function playVideo() {
+	if (!video.classList.contains("playing")) {
+		video.classList.add("playing");
+		video_headline.classList.add("playing_v");
+		video.play();
+	} else {
+		video.pause();
+		video.classList.remove("playing");
+		video_headline.classList.remove("playing_v");
+	}
+}
+function showControls(e) {
+	if (video.classList.contains("playing")) {
+		let video_pos = video.getBoundingClientRect();
+		let m_x = e.clientY - video_pos.top;
+		if (m_x > video_pos.width - video_pos.width * 0.2) {
+			console.log("HOVERUJEM PRI DNU");
+		}
 	}
 }

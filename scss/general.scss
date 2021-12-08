@@ -59,20 +59,41 @@ h6 {
 		}
 	}
 }
+// BUTTONI
+.btn {
+	font-family: $fnt_headline;
+	text-transform: uppercase;
+	color: $white;
+
+	display: block;
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	&.btn_slider {
+		background: $clr_accents;
+	}
+}
+.container-fluid {
+	width: 80%;
+	max-width: 1550px;
+	margin: 0 auto;
+	min-width: 350px;
+}
 
 .container {
-	width: 1500px;
+	width: 1550px;
 	min-width: 320px;
 	margin: 0 auto;
 	// border: 1px solid red;
-	@media (max-width: 1500px) {
-		width: calc(1500px * 0.8);
+	@media (max-width: 1550px) {
+		width: calc(1550px * 0.8);
 	}
-	@media (max-width: 1200px) {
-		width: calc(1200px * 0.8);
+	@media (max-width: 1240px) {
+		width: calc(1240px * 0.8);
 	}
-	@media (max-width: 960px) {
-		width: calc(960px * 0.8);
+	@media (max-width: 990px) {
+		width: calc(990px * 0.8);
 	}
 	@media (max-width: 768px) {
 		width: 100%;
@@ -136,4 +157,38 @@ h6 {
 
 section {
 	margin-top: 20px;
+}
+
+.owl-theme {
+	.owl-nav {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: calc(100% + 100px);
+		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 0;
+		button[class*="owl-"] {
+			height: 45px;
+			width: 42px;
+			margin: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		}
+	}
+	@media (max-width: 420px) {
+		.owl-nav {
+			// bottom: 0;
+			top: unset;
+			bottom: -60px;
+			transform: translate(-50%, 0%);
+			width: 100%;
+		}
+	}
 }

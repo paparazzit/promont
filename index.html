@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<title>Promont Group</title>
+		<link rel="stylesheet" href="css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="css/owl.theme.default.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
@@ -95,6 +97,29 @@
 			</div>
 			<div class="accentCircle"></div>
 		</header>
+
+		<section class="video" id="video">
+			<div class="video_wrapper">
+				<video
+					id="video_content"
+					src="http://srdjansrdjanov.info/video/video.mp4"
+				></video>
+				<div class="video_controls">
+					<h2>PROMONT</h2>
+					<p>Pogledajte prezentaciju naših dosadašnjih projekata.</p>
+					<div class="control_border">
+						<div class="inner_border">
+							<img
+								id="play_stop"
+								src="assets/videoSection/play_arrow.png"
+								alt=""
+							/>
+						</div>
+					</div>
+					<h2>VIDEO</h2>
+				</div>
+			</div>
+		</section>
 
 		<!-- TIMELINE -->
 		<section id="timeline" class="timeline">
@@ -218,30 +243,127 @@
 		<!-- DIVIZIJE -->
 
 		<section class="divizije" id="divizije">
-			<div class="container">
+			<div class="container-fluid">
 				<hgroup class="div_hg">
 					<div class="divi_content">
-						<div id="line_cont1"></div>
 						<p>
 							U našem poslu, bilo da su u pitanju turizam, ugostiteljstvo,
 							energetika ili proizvodnja vrhunskih alkoholnih pića, okrenuti smo
 							najkvalitetnijim lokalnim resursima i istovremeno, najvišim
-							međunarodnim standardima poslovanja. <span id="ref1"></span>
+							međunarodnim standardima poslovanja<span id="ref1"
+								>.<span id="ref1Line"></span
+							></span>
 						</p>
-						<div id="line_cont2"></div>
 					</div>
 					<h2><span id="ref2">D</span>ivizij<span id="ref3">e</span></h2>
 
 					<div class="divi_content">
 						<p>
-							<span id="ref4">U</span>z sve to, ono što nas vodi su ogromna
-							želja za istraživanjem i potreba za usavršavanjem u svemu što
-							radimo. Jer, kao što je davno rečeno "ono što vodi i vuče svet,
-							nisu lokomotive, nego ideje"
+							<span id="ref4"><span id="ref4Line"></span> U</span>z sve to, ono
+							što nas vodi su ogromna želja za istraživanjem i potreba za
+							usavršavanjem u svemu što radimo. Jer, kao što je davno rečeno
+							"ono što vodi i vuče svet, nisu lokomotive, nego ideje"
 						</p>
 						<p class="cite">PROMONT GROUP</p>
 					</div>
 				</hgroup>
+
+				<!-- SLIDER -->
+
+				<div class="divi_slider">
+					<div class="owl-carousel owl-theme">
+						<div class="item">
+							<img
+								src="assets/divizje/energetika.jpg"
+								alt="energetika promont"
+								title="energetika"
+							/>
+							<a href="#" title="energetika" class="btn btn_slider"
+								>energetika</a
+							>
+							<div class="slider_content">
+								<h3>Promont Energy</h3>
+								<p>
+									Lider i pouzdan partner u oblasti energetike već preko 60
+									godina. Međunarodni projekti. Međunarodne reference.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="assets/divizje/hladnjace.jpg" alt="hladnjaca promont" />
+							<a href="#" title="hladnjača" class="btn btn_slider">HLADNJAČA</a>
+							<div class="slider_content">
+								<h3>Promont Frigo</h3>
+								<p>
+									Najmodernija hladnjača sa opremom kapaciteta 3000 tona. Vaš
+									pouzdan partner u skladištenju smrznute robe.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img
+								src="assets/divizje/destilerija.jpg"
+								alt="destilerije promont"
+							/>
+							<a href="#" title="destilerija" class="btn btn_slider"
+								>destilerija</a
+							>
+							<div class="slider_content">
+								<h3>Promont Distillery</h3>
+								<p>
+									Lider u proizvodnji voćnih rakija i likera vrhunskog
+									kvaliteta. Kako mi to volimo da kažemo: rakija za gospodina,
+									liker za damu.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="assets/divizje/pivara.jpg" alt="pivara promont" />
+							<a href="#" title="pivara" class="btn btn_slider">Pivara</a>
+							<div class="slider_content">
+								<h3>Promont Brewery</h3>
+								<p>
+									Hmelj iz Austrije i Novog Zelanda, slad iz Holandije i
+									Belgije. Kuvano s’ ljubavlju u Srbiji. Svetsko, a naše.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img
+								src="assets/divizje/hotelijerstvo.jpg"
+								alt="hotelijerstvo promont"
+							/>
+							<a href="#" title="hotelijerstvo" class="btn btn_slider"
+								>hotelijerstvo</a
+							>
+							<div class="slider_content">
+								<h3>Promont Hospitality</h3>
+								<p>
+									Fruške terme resort -Vodeća destinacija za odmor u Srbiji.
+									Hotel Fruške terme - prve terme u Srbiji. Hotel Premier Aqua -
+									prvi adults-only hotel u Srbiji.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img
+								src="assets/divizje/realestate.jpg"
+								alt="realestate promont"
+							/>
+							<a href="#" title="Promont Invest" class="btn btn_slider"
+								>REAL ESTATE</a
+							>
+							<div class="slider_content">
+								<h3>Promont Invest</h3>
+								<p>
+									Fruške Residence, prvo moderno kondominijum naselje u Srbiji.
+									Vaša oaza mira na Fruškoj gori, sa benefitima i sadržajima
+									vodećeg resorta.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -382,6 +504,13 @@
 				</article>
 			</div>
 		</footer>
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+			integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			crossorigin="anonymous"
+		></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/owl_slider_app.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

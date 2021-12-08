@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Yellowtail&display=swap");
 
 @import "variables";
 @import "mixins";
@@ -429,6 +429,199 @@ header {
 		}
 	}
 }
+// VIDEO SECTION
+
+.video {
+	.video_wrapper {
+		position: relative;
+		background: $clr_fnt_dark;
+		video {
+			border: 1px solid red;
+			width: 100%;
+			height: 700px;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+			opacity: 0.4;
+			transition: 0.5s all ease-in-out;
+			&.playing {
+				opacity: 1;
+			}
+		}
+		.video_controls {
+			width: 670px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			// width: 60%;
+			// max-width: 1000px;
+			// height: 300px;
+
+			@include flex(center, flex-start, wrap, row);
+			h2,
+			p {
+				color: $white;
+
+				transition: $trnasition-out;
+			}
+			h2 {
+				font-size: 10rem;
+			}
+			h2:first-of-type {
+				line-height: 1;
+				flex: 0 0 100%;
+			}
+			h2:last-of-type {
+				line-height: 1;
+				flex: 0 0 40%;
+				// border: 1px solid red;
+				margin-top: -32px;
+			}
+			.control_border {
+				height: 120px;
+				width: 120px;
+				flex: 0 0 120px;
+				border-radius: 50%;
+				background: rgba($clr_fnt_dark, 0.5);
+				margin: 0 15px;
+				border: 6px solid transparent;
+				transition: $trnasition-out;
+				cursor: pointer;
+				.inner_border {
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					border: 2px solid $clr_accents;
+					position: relative;
+					& > img {
+						position: absolute;
+
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+					}
+				}
+				&:hover {
+					transform: scale(1.1);
+					transition: $trnasition-in;
+				}
+			}
+			p {
+				flex: 0 0 25%;
+				min-width: 175px;
+				line-height: 1.5;
+				// border: 1px solid red;
+			}
+			transition: 0.4s all ease-in-out;
+			&.playing_v {
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		.video_wrapper {
+			.video {
+			}
+			.video_controls {
+				width: 530px;
+				h2 {
+					font-size: 7rem;
+				}
+				.control_border {
+					width: 100px;
+					height: 100px;
+					flex: 0 0 100px;
+				}
+				p {
+					font-size: 0.9rem;
+					min-width: 160px;
+				}
+			}
+		}
+	}
+	@media (max-width: 550px) {
+		.video_wrapper {
+			.video {
+			}
+			.video_controls {
+				width: 450px;
+				justify-content: center;
+				h2 {
+					font-size: 4.7rem;
+				}
+				h2:first-of-type {
+					text-align: center;
+					flex: unset;
+				}
+				h2:last-of-type {
+					margin-top: -22px;
+				}
+				.control_border {
+					width: 90px;
+					height: 90px;
+					flex: 0 0 90px;
+					transform: translateY(40%);
+					margin: 0;
+					img {
+						width: 50%;
+						display: block;
+					}
+					&:hover {
+						transform: scale(1.1) translateY(33%);
+					}
+				}
+				p {
+					display: none;
+				}
+			}
+		}
+	}
+	@media (max-width: 430px) {
+		.video_wrapper {
+			.video {
+			}
+			.video_controls {
+				width: 450px;
+				justify-content: center;
+				flex-direction: column;
+				h2 {
+					font-size: 4.7rem;
+				}
+				h2:first-of-type {
+					text-align: center;
+					flex: unset;
+				}
+				h2:last-of-type {
+					margin-top: -14px;
+					order: 2;
+				}
+				.control_border {
+					order: 3;
+					width: 90px;
+					height: 90px;
+					flex: 0 0 90px;
+					transform: translateY(0%);
+					margin: 0;
+					img {
+						width: 50%;
+						display: block;
+					}
+					&:hover {
+						transform: scale(1.1) translateY(0%);
+					}
+				}
+				p {
+					display: block;
+					order: 4;
+					width: 175px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
 
 // TIMELINE
 
@@ -527,10 +720,10 @@ header {
 		url(../assets/divizje/divizije_bg.jpg);
 	background-position: center;
 	background-size: cover;
-	height: 100vh;
-	.container {
+	// height: 100vh;
+	padding-bottom: 50px;
+	.container-fluid {
 		.div_hg {
-			border: 1px solid green;
 			color: $white;
 			position: relative;
 			@include flex(center, space-between, nowrap, row);
@@ -544,45 +737,47 @@ header {
 				color: $white;
 				font-size: 12vw;
 				transform: translateY(-20%);
-
-				border: 1px solid blue;
 			}
 			.divi_content {
-				// border: 1px solid red;
-				// position: absolute;
-				// width: 372px;
 				p {
 					max-width: 372px;
+					#ref1 {
+						position: relative;
+
+						#ref1Line {
+							display: block;
+							position: absolute;
+							width: 200px;
+							height: 2px;
+							border-top: 2px dashed $clr_accents;
+							top: 50%;
+							transform: translateY(-50%);
+							left: calc(100% + 4px);
+						}
+					}
+					#ref4 {
+						position: relative;
+						#ref4Line {
+							display: block;
+							position: absolute;
+
+							// width: 60px;
+							height: 2px;
+							border-top: 2px dashed $clr_accents;
+							top: 50%;
+							transform: translateY(-50%);
+							right: calc(100% + 4px);
+						}
+					}
 				}
 			}
 			.divi_content:nth-child(1) {
-				border: 1px solid red;
 				transform: translateY(-35%);
-				z-index: 2;
-				#line_cont1,
-				#line_cont2 {
-					position: absolute;
-
-					height: 2px;
-					border-top: 2px dashed $clr_accents;
-					display: block;
-					z-index: 1;
-				}
-				#line_cont1 {
-					width: 400px;
-					top: 10px;
-					right: 100%;
-				}
-				#line_cont2 {
-					bottom: 10px;
-					left: 45%;
-					width: 400px;
-				}
 			}
 			.divi_content:nth-child(3) {
 				right: 0;
 				transform: translateY(30%);
-				border: 1px solid green;
+
 				.cite {
 					font-size: 1.3rem;
 					text-transform: uppercase;
@@ -598,6 +793,153 @@ header {
 						height: 2px;
 						width: 8%;
 						background-color: $clr_accents;
+					}
+				}
+			}
+		}
+		// DIVI SLIDER
+	}
+	.divi_slider {
+		// border: 1px solid red;
+		width: 90%;
+		margin: 80px auto;
+		.owl-carousel {
+			.item {
+				text-align: center;
+				position: relative;
+
+				img {
+					width: 100%;
+
+					display: block;
+
+					z-index: 0;
+				}
+				.btn {
+					position: absolute;
+					z-index: 1;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+				.slider_content {
+					position: absolute;
+					z-index: 1;
+					bottom: 0;
+					width: 100%;
+					height: 155px;
+					padding: 20px 30px;
+					background: rgba($black, 0.6);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					color: $white;
+					h3 {
+						color: $white;
+						text-transform: capitalize;
+						font-size: 1.5rem;
+						margin-bottom: 10px;
+						font-family: $accent_fnt;
+					}
+					p {
+						font-size: 0.9rem;
+						letter-spacing: 1px;
+					}
+				}
+			}
+			@media (max-width: 1076px) {
+				.item {
+					height: 400px;
+					width: 400px;
+					img {
+					}
+				}
+			}
+		}
+	}
+
+	// DIV RESPONSIVE
+	@media (max-width: 1338px) {
+		.container-fluid {
+			.div_hg {
+				& > h2 {
+					transform: translateY(-10%);
+				}
+				.divi_content {
+					&:nth-child(1) {
+						transform: translateY(-25%);
+					}
+					&:nth-child(3) {
+						transform: translateY(37%);
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1200px) {
+		.container-fluid {
+			.div_hg {
+				h2 {
+					transform: translateY(0);
+				}
+				.divi_content {
+					p {
+						font-size: 0.85rem;
+					}
+					&:nth-child(1) {
+						transform: translateY(10%);
+					}
+					&:nth-child(3) {
+						transform: translateY(65%);
+						.cite {
+							font-size: 0.9rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 960px) {
+		.container-fluid {
+			.div_hg {
+				flex-wrap: wrap;
+				align-items: flex-start;
+				h2 {
+					transform: translateY(0);
+					flex: 0 0 100%;
+					width: 100%;
+					order: 1;
+				}
+				.divi_content {
+					flex: 0 0 48%;
+					width: 48%;
+
+					p {
+						font-size: 0.85rem;
+					}
+					&:nth-child(1) {
+						transform: translateY(0);
+						#ref1 {
+							#ref1Line {
+								display: none;
+							}
+						}
+						order: 2;
+						padding-left: 20px;
+					}
+					&:nth-child(3) {
+						transform: translateY(0);
+						padding-right: 20px;
+						order: 3;
+						.cite {
+							font-size: 0.9rem;
+						}
+						#ref4 {
+							#ref4Line {
+								display: none;
+							}
+						}
 					}
 				}
 			}
