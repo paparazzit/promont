@@ -7,7 +7,11 @@ let ref2 = document.querySelector("#ref2");
 let ref3 = document.querySelector("#ref3");
 let ref4 = document.querySelector("#ref4");
 let ref4Line = document.querySelector("#ref4Line");
-
+let tl_years = document.querySelectorAll(".tl-year");
+let tl_titles = document.querySelectorAll(".tl_title");
+let tl_texts = document.querySelectorAll(".tl_text");
+let percent = 1;
+let percent_top = 1;
 window.addEventListener("load", start);
 window.addEventListener("resize", start);
 
@@ -20,8 +24,10 @@ function start() {
 	let header = document.querySelector("header");
 	let strelicaDole = document.querySelector(".strelica");
 	let middle = header.offsetHeight / 2 - hgr.offsetHeight / 2;
-
 	let _950_w = _950.getBoundingClientRect();
+	let _1958 = document.querySelector("#_1958");
+	let line_1958 = document.querySelector("#line_1958");
+
 	if (width < 950) {
 		dots.style.width = hgr.offsetLeft - _950_w.width + 30 + "px";
 		dots.style.left = _950_w.width - 25 + "px";
@@ -30,94 +36,104 @@ function start() {
 		dots.style.left = _950_w.width - 45 + "px";
 	}
 
-	// console.log("LEFT", hgr.offsetLeft);
-	// console.log("WIDTH", _950_w.width);
-	// console.log("SIZE", hgr_pos.left - _950_w.width + "px");
 	strelicaDole.style.height = middle - 25 + "px";
+	fontResize();
 	tlYearPos();
 	tlLinesPos();
 	divisionLines();
 }
 
+function fontResize() {
+	if (width <= 1550) {
+		percent = 0.8;
+		percent_top = 1.1;
+	}
+	if (width <= 1240) {
+		percent = 0.7;
+		percent_top = 1.1;
+	} else {
+		percent = 1;
+		percent_top = 1;
+	}
+}
+
 function tlYearPos() {
-	let font_percent = 1;
-	let tlHeadlines = document.querySelectorAll(".tlYear");
-	let cont_width = document.querySelector(".tl_wrapper .container").offsetLeft;
-	let y_start = document.querySelector("#y_start");
-	// let pos = y_start.getBoundingClientRect();
-	let start_line = document.querySelector("#line1");
-	let _2004 = document.querySelector("#_2004");
-	let _1993 = document.querySelector("#_1993");
-	if (def.offsetWidth < 1500) {
-		font_percent = 0.7;
-	}
-	start_line.style.width = cont_width + 9 + "px";
-
-	tlHeadlines.forEach((headline) => {
-		// console.log(headline);
-		let element = headline.children;
-		let top = headline.getAttribute("data-top");
-		let left = headline.getAttribute("data-left");
-		let fnt_size = headline.getAttribute("data-fs") * font_percent;
-		let bottom = headline.getAttribute("data-bottom");
-		let right = headline.getAttribute("data-right");
-
-		for (let i = 0; i < element.length; i++) {
-			// console.log(elementss[i].classList);
-			if (element[i].classList.contains("title")) {
-				element[i].style.fontSize = fnt_size + "px";
-			}
-			if (element[i].classList.contains("text")) {
-				let ml = element[i].getAttribute("data-ml");
-				let p_fsize = element[i].getAttribute("data-fontSize");
-				let mt = element[i].getAttribute("data-mt");
-				let mb = element[i].getAttribute("data-mb");
-
-				element[i].style.fontSize = p_fsize + "px";
-				element[i].style.marginLeft = ml + "px";
-				element[i].style.marginTop = mt + "px";
-				element[i].style.marginBottom = mb + "px";
-			}
+	// TL-position
+	tl_years.forEach((tl_year) => {
+		let top = tl_year.getAttribute("data-top");
+		let bottom = tl_year.getAttribute("data-bottom");
+		let left = tl_year.getAttribute("data-left");
+		let right = tl_year.getAttribute("data-right");
+		if (left) {
+			tl_year.style.left = left * percent + "px";
 		}
-		headline.style.left = left + "px";
-		headline.style.right = right + "px";
-		headline.style.top = top + "px";
-		headline.style.bottom = bottom + "px";
+		if (right) {
+			tl_year.style.right = right * percent + "px";
+		}
+		if (top) {
+			tl_year.style.top = top * percent_top + "px";
+		}
+		if (bottom) {
+			tl_year.style.bottom = bottom * percent_top + "px";
+		}
+
+		console.log(percent);
 	});
-	let pos_2004 = _2004.getBoundingClientRect();
-	let pos_1993 = _1993.getBoundingClientRect();
-	let line2 = document.querySelector("#line2");
-	let line_2010 = document.querySelector("#line_2010");
-	let _2010 = document.querySelector("#_2010");
-	let _2008 = document.querySelector("#_2008");
-	let pos_2010 = _2010.getBoundingClientRect();
-	let pos_2008 = _2008.getBoundingClientRect();
-	// console.log(pos_2008, pos_2010);
-	line2.style.width =
-		pos_2004.left - (pos_1993.left + pos_1993.width) + 10 + "px";
-	line2.style.left =
-		-(pos_2004.left - (pos_1993.left + pos_1993.width) + 10) + "px";
-	line_2010.style.height =
-		pos_2010.top - pos_2008.top - pos_2008.height + pos_2010.height / 2 + "px";
-	line_2010.style.top = -(pos_2010.top - pos_2008.top) + pos_2008.height + "px";
-	// console.log(def.offsetWidth);
+
+	// STARTING LINE 1958
+	let _1958_pos = _1958.getBoundingClientRect();
+
+	line_1958.style.width = _1958_pos.left + 20 + "px";
+	line_1958.style.right = 100 - 8 + "%";
+	line_1958.style.top = _1958.getAttribute("data-fs") / 2 - 5 + "px";
+
+	setFontSize(tl_titles);
+	setFontSize(tl_texts);
+}
+function setFontSize(items) {
+	items.forEach((item) => {
+		let font = item.getAttribute("data-fs");
+		let mt = item.getAttribute("data-mt");
+		let ml = item.getAttribute("data-ml");
+		let fontSize = font * percent;
+		item.style.fontSize = fontSize + "px";
+		if (mt) {
+			item.style.marginTop = mt + "px";
+		}
+		if (ml) {
+			item.style.marginLeft = ml + "px";
+		}
+		if (item.className === "tl_title") {
+			let sibling = findSiblings(item);
+			item.addEventListener("mouseenter", (e) => {
+				item.classList.add("hover");
+				if (sibling) {
+					sibling.classList.add("hover");
+				}
+			});
+			item.addEventListener("mouseleave", (e) => {
+				item.classList.remove("hover");
+				if (sibling) {
+					sibling.classList.remove("hover");
+				}
+			});
+		}
+	});
+}
+function findSiblings(element) {
+	let text_elem;
+	if (element.nextElementSibling) {
+		text_elem = element.nextElementSibling;
+	}
+	if (element.previousElementSibling) {
+		text_elem = element.previousElementSibling;
+	} else {
+		return null;
+	}
+	return text_elem;
 }
 
-function tlLinesPos() {
-	let lines = document.querySelectorAll(".lines");
-	lines.forEach((line) => {
-		let width = line.getAttribute("data-width");
-		let height = line.getAttribute("data-height");
-		let top = line.getAttribute("data-top");
-		let left = line.getAttribute("data-left");
-		line.style.width = width + "px";
-		line.style.height = height + "px";
-		line.style.left = left + "px";
-		line.style.top = top + "px";
-	});
-	if (def.offsetWidth < 1300) {
-	}
-}
+function tlLinesPos() {}
 
 function divisionLines() {
 	let ref1_pos = ref1.getBoundingClientRect();
@@ -130,8 +146,6 @@ function divisionLines() {
 		ref3_pos.width +
 		ref3_pos.width / 2 +
 		"px";
-
-	console.log();
 }
 
 function space_between(ref_a, ref_b) {

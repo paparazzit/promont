@@ -85,6 +85,7 @@ h6 {
 	width: 1550px;
 	min-width: 320px;
 	margin: 0 auto;
+
 	// border: 1px solid red;
 	@media (max-width: 1550px) {
 		width: calc(1550px * 0.8);
@@ -98,6 +99,9 @@ h6 {
 	@media (max-width: 768px) {
 		width: 100%;
 	}
+}
+.border {
+	border: 1px solid red;
 }
 
 .border_right {
@@ -113,16 +117,16 @@ h6 {
 	border-bottom: 2px dashed $clr_accents;
 }
 .br_r_t_r {
-	border-top-right-radius: 30px;
+	border-top-right-radius: 20px;
 }
 .br_r_t_l {
-	border-top-left-radius: 30px;
+	border-top-left-radius: 20px;
 }
 .br_r_b_l {
-	border-bottom-left-radius: 30px;
+	border-bottom-left-radius: 20px;
 }
 .br_r_b_r {
-	border-bottom-right-radius: 30px;
+	border-bottom-right-radius: 20px;
 }
 
 .flex {
@@ -143,15 +147,16 @@ h6 {
 }
 #_2021 {
 	border: 1px dashed $white;
-	width: 290px;
-	height: 290px;
+	width: 235px;
+	height: 235px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	h3 {
-		line-height: normal;
-		margin-top: -15px;
+
+	@media (max-width: 1550px) {
+		width: 210px;
+		height: 210px;
 	}
 }
 

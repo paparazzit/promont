@@ -201,9 +201,6 @@ header {
 				}
 			}
 		}
-		.doted_line {
-			// width: 50vw;
-		}
 	}
 	.accentBox {
 		padding: 30px 50px;
@@ -436,7 +433,6 @@ header {
 		position: relative;
 		background: $clr_fnt_dark;
 		video {
-			border: 1px solid red;
 			width: 100%;
 			height: 700px;
 			object-fit: cover;
@@ -511,7 +507,6 @@ header {
 				flex: 0 0 25%;
 				min-width: 175px;
 				line-height: 1.5;
-				// border: 1px solid red;
 			}
 			transition: 0.4s all ease-in-out;
 			&.playing_v {
@@ -634,10 +629,9 @@ header {
 	background-position: center;
 	background-size: cover;
 	height: 100vh;
-	min-height: 775px;
+	min-height: 875px;
 	.tl_wrapper {
 		position: relative;
-		border: 1px solid red;
 
 		height: 100%;
 		#line1 {
@@ -671,22 +665,25 @@ header {
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			.left_side {
-				border: 1px solid green;
-				flex: 0 0 50%;
-				height: 100%;
-				width: 50%;
-				position: relative;
-			}
-			.right_side {
-				flex: 0 0 50%;
-				width: 50%;
-				border: 1px solid blue;
-				height: 100%;
-				position: relative;
-			}
-			.tlYear {
+			position: relative;
+			// .left_side {
+			// 	border: 1px solid green;
+			// 	flex: 0 0 50%;
+			// 	height: 100%;
+			// 	width: 50%;
+			// 	position: relative;
+			// }
+			// .right_side {
+			// 	flex: 0 0 50%;
+			// 	width: 50%;
+			// 	border: 1px solid blue;
+			// 	height: 100%;
+			// 	position: relative;
+			// }
+			.tl-year {
 				position: absolute;
+				cursor: pointer;
+
 				h3,
 				p {
 					position: relative;
@@ -694,22 +691,196 @@ header {
 					line-height: 1;
 					z-index: 2;
 					letter-spacing: 2px;
+					transition: $trnasition-out;
+					&.hover {
+						color: $clr_accents;
+					}
 				}
 				h3 {
 					line-height: 0.8;
-					// border: 1px solid red;
+					z-index: 3;
 					letter-spacing: -6px;
+					.lines {
+						position: absolute;
+						z-index: 3;
+						&#_1 {
+							height: 120px;
+							width: 90px;
+							top: 32px;
+							left: 100%;
+						}
+						&#_2 {
+							height: 165px;
+							width: 100px;
+							right: 94%;
+							top: 50%;
+						}
+						&#_3 {
+							width: 180px;
+							height: 1px;
+							top: 25px;
+							left: 100%;
+						}
+						&#_4 {
+							width: 55px;
+							height: 262px;
+							bottom: 97%;
+							left: 65%;
+						}
+						&#_5 {
+							height: 508px;
+							width: 48px;
+							top: 110%;
+							right: 35%;
+						}
+						// &#_6 {
+						// 	height: 295px;
+						// 	width: 275px;
+						// 	right: 55%;
+						// 	top: 110%;
+						// 	.add {
+						// 		height: 40px;
+						// 		width: 100%;
+						// 		position: absolute;
+						// 		bottom: 0;
+						// 		left: 0;
+						// 	}
+						// 	.add_2 {
+						// 		height: calc(100% - 40px);
+						// 		width: 50px;
+						// 		position: absolute;
+						// 		right: 0;
+						// 	}
+						// }
+
+						&#_7 {
+							width: 10px;
+							height: 140px;
+							bottom: 98%;
+							left: 10px;
+						}
+						&#_8 {
+							width: 40px;
+							height: 342px;
+							top: 107%;
+							left: 25px;
+						}
+						&#_9 {
+							width: 65px;
+							height: 255px;
+							bottom: 100%;
+							left: 15px;
+						}
+						&#_10 {
+							width: 35px;
+							height: 140px;
+							right: 85%;
+							top: calc(100% + 8px);
+						}
+						&#_11 {
+							width: 1px;
+							height: 245px;
+							bottom: 97%;
+							left: 42%;
+						}
+					}
+				}
+				.lines {
+					pointer-events: none;
+					position: absolute;
+					&#_6 {
+						height: 295px;
+						width: 275px;
+						right: 55%;
+						top: 110%;
+						.add {
+							height: 40px;
+							width: 100%;
+							position: absolute;
+							bottom: 0;
+							left: 0;
+						}
+						.add_2 {
+							height: calc(100% - 40px);
+							width: 50px;
+							position: absolute;
+							right: 0;
+						}
+					}
 				}
 				span {
 					z-index: 1;
 				}
-				&#_2012 {
-					bottom: 30%;
-					transform: translateY(-50%);
-				}
 			}
-			.lines {
-				position: absolute;
+		}
+	}
+
+	// TIME LINE RESPONSIVE
+	@media (max-width: 1550px) {
+		.tl_wrapper {
+			.container {
+				.tl-year {
+					h3 {
+						.lines {
+							&#_1 {
+								left: 90%;
+								top: 28px;
+								height: 135px;
+							}
+							&#_2 {
+								height: 188px;
+							}
+							&#_3 {
+								top: 20px;
+								width: 140px;
+							}
+							&#_4 {
+								height: 292px;
+								width: 52px;
+								left: 63%;
+							}
+							&#_5 {
+								height: 560px;
+							}
+							&#_7 {
+								height: 185px;
+								left: 5px;
+							}
+							&#_8 {
+								height: 395px;
+								left: 15px;
+							}
+							&#_9 {
+								height: 295px;
+								width: 50px;
+								left: 8px;
+							}
+							&#_10 {
+								height: 180px;
+								right: 80%;
+							}
+							&#_11 {
+								height: 310px;
+								border-top: 2px dashed $clr_accents;
+								width: 50px;
+								border-top-right-radius: 20px;
+								left: 40%;
+							}
+						}
+					}
+					.lines {
+						pointer-events: none;
+						position: absolute;
+						&#_6 {
+							height: 325px;
+							width: 215px;
+							.add {
+							}
+							.add_2 {
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -800,7 +971,6 @@ header {
 		// DIVI SLIDER
 	}
 	.divi_slider {
-		// border: 1px solid red;
 		width: 90%;
 		margin: 80px auto;
 		.owl-carousel {

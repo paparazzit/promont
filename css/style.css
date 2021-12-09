@@ -91,6 +91,9 @@ h6 {
     .container {
       width: 100%; } }
 
+.border {
+  border: 1px solid red; }
+
 .border_right {
   border-right: 2px dashed #ea2a00; }
 
@@ -104,16 +107,16 @@ h6 {
   border-bottom: 2px dashed #ea2a00; }
 
 .br_r_t_r {
-  border-top-right-radius: 30px; }
+  border-top-right-radius: 20px; }
 
 .br_r_t_l {
-  border-top-left-radius: 30px; }
+  border-top-left-radius: 20px; }
 
 .br_r_b_l {
-  border-bottom-left-radius: 30px; }
+  border-bottom-left-radius: 20px; }
 
 .br_r_b_r {
-  border-bottom-right-radius: 30px; }
+  border-bottom-right-radius: 20px; }
 
 .flex {
   display: flex;
@@ -132,15 +135,16 @@ h6 {
 
 #_2021 {
   border: 1px dashed #fff;
-  width: 290px;
-  height: 290px;
+  width: 235px;
+  height: 235px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%; }
-  #_2021 h3 {
-    line-height: normal;
-    margin-top: -15px; }
+  @media (max-width: 1550px) {
+    #_2021 {
+      width: 210px;
+      height: 210px; } }
 
 section {
   margin-top: 20px; }
@@ -697,7 +701,6 @@ header {
   position: relative;
   background: #212629; }
   .video .video_wrapper video {
-    border: 1px solid red;
     width: 100%;
     height: 700px;
     object-fit: cover;
@@ -835,10 +838,9 @@ header {
   background-position: center;
   background-size: cover;
   height: 100vh;
-  min-height: 775px; }
+  min-height: 875px; }
   .timeline .tl_wrapper {
     position: relative;
-    border: 1px solid red;
     height: 100%; }
     .timeline .tl_wrapper #line1 {
       position: absolute; }
@@ -864,38 +866,141 @@ header {
       border: 1px solid red;
       display: flex;
       align-items: center;
-      justify-content: center; }
-      .timeline .tl_wrapper .container .left_side {
-        border: 1px solid green;
-        flex: 0 0 50%;
-        height: 100%;
-        width: 50%;
-        position: relative; }
-      .timeline .tl_wrapper .container .right_side {
-        flex: 0 0 50%;
-        width: 50%;
-        border: 1px solid blue;
-        height: 100%;
-        position: relative; }
-      .timeline .tl_wrapper .container .tlYear {
-        position: absolute; }
-        .timeline .tl_wrapper .container .tlYear h3,
-        .timeline .tl_wrapper .container .tlYear p {
+      justify-content: center;
+      position: relative; }
+      .timeline .tl_wrapper .container .tl-year {
+        position: absolute;
+        cursor: pointer; }
+        .timeline .tl_wrapper .container .tl-year h3,
+        .timeline .tl_wrapper .container .tl-year p {
           position: relative;
           color: #fff;
           line-height: 1;
           z-index: 2;
-          letter-spacing: 2px; }
-        .timeline .tl_wrapper .container .tlYear h3 {
+          letter-spacing: 2px;
+          transition: 0.2s all ease; }
+          .timeline .tl_wrapper .container .tl-year h3.hover,
+          .timeline .tl_wrapper .container .tl-year p.hover {
+            color: #ea2a00; }
+        .timeline .tl_wrapper .container .tl-year h3 {
           line-height: 0.8;
+          z-index: 3;
           letter-spacing: -6px; }
-        .timeline .tl_wrapper .container .tlYear span {
+          .timeline .tl_wrapper .container .tl-year h3 .lines {
+            position: absolute;
+            z-index: 3; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_1 {
+              height: 120px;
+              width: 90px;
+              top: 32px;
+              left: 100%; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_2 {
+              height: 165px;
+              width: 100px;
+              right: 94%;
+              top: 50%; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_3 {
+              width: 180px;
+              height: 1px;
+              top: 25px;
+              left: 100%; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_4 {
+              width: 55px;
+              height: 262px;
+              bottom: 97%;
+              left: 65%; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_5 {
+              height: 508px;
+              width: 48px;
+              top: 110%;
+              right: 35%; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_7 {
+              width: 10px;
+              height: 140px;
+              bottom: 98%;
+              left: 10px; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_8 {
+              width: 40px;
+              height: 342px;
+              top: 107%;
+              left: 25px; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_9 {
+              width: 65px;
+              height: 255px;
+              bottom: 100%;
+              left: 15px; }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_10 {
+              width: 35px;
+              height: 140px;
+              right: 85%;
+              top: calc(100% + 8px); }
+            .timeline .tl_wrapper .container .tl-year h3 .lines#_11 {
+              width: 1px;
+              height: 245px;
+              bottom: 97%;
+              left: 42%; }
+        .timeline .tl_wrapper .container .tl-year .lines {
+          pointer-events: none;
+          position: absolute; }
+          .timeline .tl_wrapper .container .tl-year .lines#_6 {
+            height: 295px;
+            width: 275px;
+            right: 55%;
+            top: 110%; }
+            .timeline .tl_wrapper .container .tl-year .lines#_6 .add {
+              height: 40px;
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              left: 0; }
+            .timeline .tl_wrapper .container .tl-year .lines#_6 .add_2 {
+              height: calc(100% - 40px);
+              width: 50px;
+              position: absolute;
+              right: 0; }
+        .timeline .tl_wrapper .container .tl-year span {
           z-index: 1; }
-        .timeline .tl_wrapper .container .tlYear#_2012 {
-          bottom: 30%;
-          transform: translateY(-50%); }
-      .timeline .tl_wrapper .container .lines {
-        position: absolute; }
+  @media (max-width: 1550px) {
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_1 {
+      left: 90%;
+      top: 28px;
+      height: 135px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_2 {
+      height: 188px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_3 {
+      top: 20px;
+      width: 140px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_4 {
+      height: 292px;
+      width: 52px;
+      left: 63%; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_5 {
+      height: 560px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_7 {
+      height: 185px;
+      left: 5px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_8 {
+      height: 395px;
+      left: 15px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_9 {
+      height: 295px;
+      width: 50px;
+      left: 8px; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_10 {
+      height: 180px;
+      right: 80%; }
+    .timeline .tl_wrapper .container .tl-year h3 .lines#_11 {
+      height: 310px;
+      border-top: 2px dashed #ea2a00;
+      width: 50px;
+      border-top-right-radius: 20px;
+      left: 40%; }
+    .timeline .tl_wrapper .container .tl-year .lines {
+      pointer-events: none;
+      position: absolute; }
+      .timeline .tl_wrapper .container .tl-year .lines#_6 {
+        height: 325px;
+        width: 215px; } }
 
 .divizije {
   background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(255, 255, 255, 0.274)), url(../assets/divizje/divizije_bg.jpg);
